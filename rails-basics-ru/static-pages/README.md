@@ -2,7 +2,7 @@
 
 Хотя фреймворк Ruby On Rails разработан для создания динамических веб-сайтов, он также отлично справляется с созданием статических страниц.
 
-Создадим домашнуюю страницу и "Обо мне", которые будут доступны по путям */* и */pages/about* соответственно.
+Создадим домашнюю страницу и "Обо мне", которые будут доступны по путям */* и */pages/about* соответственно.
 
 ## Ссылки
 
@@ -16,7 +16,7 @@
   ```bash
   # NodeJS может также устанавливаться с помощью nvm или asdf
   sudo apt-get install curl
-  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_19.x | sudo -E bash -
   sudo apt install -y nodejs
 
   npm install --global yarn
@@ -30,24 +30,21 @@
 Сгенерируйте контроллер и экшен *index*.
 
 ```bash
-bin/rails generate controller HomeController index --skip-routes
+bin/rails generate controller HomeController index --skip-routes --skip
 ```
-
-### config/routes.rb
-
-Укажите корневую страницу на метод *index* контроллера *HomeController*.
 
 ### app/controllers/pages_controller.rb
 
 Сгенерируйте контроллер и метод *show* командой:
 
 ```bash
-bin/rails generate controller Pages show --skip-routes
+bin/rails generate controller Pages show --skip-routes --skip
 ```
 
 ### config/routes.rb
 
-Добавьте ресурс *pages* с одним методом *show*.
+* Укажите корневую страницу на метод *index* контроллера *HomeController*.
+* Добавьте ресурс *pages* с одним методом *show*.
 
 ### app/views/home/index.html.erb
 
